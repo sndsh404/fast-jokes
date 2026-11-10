@@ -1,0 +1,132 @@
+:root {
+    --page: #edf3f1;
+    --ink: #17302c;
+    --muted: #4f6863;
+    --line: #cfdcd8;
+    --action: #0f6b62;
+    --action-hover: #0b544d;
+    --error: #9b2c2c;
+    --error-bg: #fbeaea;
+}
+
+html,
+body {
+    background: var(--page);
+    color: var(--ink);
+}
+
+.section.page-head {
+    padding-bottom: 1rem;
+}
+
+.page-head .container,
+.page-body .container {
+    max-width: 860px;
+}
+
+.logo {
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.page-head .title {
+    color: var(--ink);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.lede {
+    color: var(--muted);
+}
+
+.section.page-body {
+    padding-top: 1rem;
+}
+
+.joke-form.box {
+    border: 1px solid var(--line);
+    box-shadow: none;
+}
+
+/* everything in one row on wide screens */
+.fields {
+    display: grid;
+    grid-template-columns: 1.4fr 1.3fr 0.8fr 1fr auto;
+    gap: 1rem;
+    align-items: end;
+}
+
+.fields .field {
+    margin-bottom: 0;
+}
+
+.joke-form .label {
+    color: var(--ink);
+}
+
+.form-help {
+    margin-top: 0.75rem;
+    color: var(--muted);
+}
+
+.amuse-button {
+    color: #fff;
+    background: var(--action);
+    border: none;
+    font-weight: 600;
+}
+
+.amuse-button:hover {
+    color: #fff;
+    background: var(--action-hover);
+}
+
+.amuse-button:focus-visible {
+    outline: 2px solid var(--action);
+    outline-offset: 2px;
+}
+
+.status {
+    min-height: 1.5em;
+    margin-top: 1rem;
+    color: var(--muted);
+}
+
+#jokes {
+    display: grid;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.joke.box {
+    margin-bottom: 0;
+    color: var(--ink);
+    border: 1px solid var(--line);
+    box-shadow: none;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+}
+
+/* keep line breaks inside a joke */
+.joke p {
+    white-space: pre-line;
+}
+
+.joke-error.box {
+    color: var(--error);
+    background: var(--error-bg);
+    border-color: var(--error);
+}
+
+/* phone size */
+@media (max-width: 760px) {
+    .fields {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .button-field,
+    .amuse-button {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+}

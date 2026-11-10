@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Jokes</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <link rel="stylesheet" href="site.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <header class="section page-head">
+        <div class="container">
+            <img class="logo" src="favicon.png" alt="" width="48" height="48">
+            <h1 class="title">Fast Jokes</h1>
+            <p class="lede">Pick a language, a category and how many jokes, or ask for one joke by its number.</p>
+        </div>
+    </header>
+    <main class="section page-body">
+        <div class="container">
+            <form class="box joke-form" id="jokeForm">
+                <div class="fields">
+                    <div class="field">
+                        <label class="label" for="selLang">Language</label>
+                        <div class="control">
+                            <div class="select is-fullwidth">
+                                <select id="selLang">
+                                    <option value="any" selected>Any</option>
+                                    <option value="eu">Basque</option>
+                                    <option value="cs">Czech</option>
+                                    <option value="en">English</option>
+                                    <option value="fr">French</option>
+                                    <option value="gl">Galician</option>
+                                    <option value="de">German</option>
+                                    <option value="hu">Hungarian</option>
+                                    <option value="it">Italian</option>
+                                    <option value="lt">Lithuanian</option>
+                                    <option value="pl">Polish</option>
+                                    <option value="es">Spanish</option>
+                                    <option value="sv">Swedish</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="selCat">Category</label>
+                        <div class="control">
+                            <div class="select is-fullwidth">
+                                <select id="selCat">
+                                    <option value="any" selected>Any</option>
+                                    <option value="neutral">Neutral</option>
+                                    <option value="chuck">Chuck Norris</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="selNum">Number</label>
+                        <div class="control">
+                            <div class="select is-fullwidth">
+                                <select id="selNum">
+                                    <option value="all" selected>All</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="jokeId">Joke number</label>
+                        <div class="control">
+                            <input class="input" type="number" id="jokeId" min="0" max="952" placeholder="0 to 952">
+                        </div>
+                    </div>
+                    <div class="field button-field">
+                        <button type="button" class="button amuse-button" id="btnAmuse">Amuse me</button>
+                    </div>
+                </div>
+                <p class="help form-help">If you type a joke number, the other choices are ignored.</p>
+            </form>
+            <p class="status" id="status" aria-live="polite"></p>
+            <div id="jokes"></div>
+        </div>
+    </main>
+</body>
+
+</html>
